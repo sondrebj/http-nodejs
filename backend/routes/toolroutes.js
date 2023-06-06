@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const cors = require('cors');
 const multer = require('multer')
+const fs = require("fs");
 
 const {createTool, getNormalTools, getTools, getOneNormalTool, getOneElectricTool, uploadTool, configTool, deleteTool, markToolAsWorking } = require("../controllers/toolsController")
 
