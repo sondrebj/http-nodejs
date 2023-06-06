@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+    <style>
+            #myBooking {
+        background-color: #272834;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+#myBooking input::placeholder{
+  font-size: 18px;
+  color: whitesmoke;
+}
+
+#myBooking .subtitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: whitesmoke
+}
+
+#myBooking .input-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#myBooking .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: whitesmoke;
+  background-color: transparent;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#myBooking .input:focus {
+  outline: none;
+  border-bottom: 2px solid #0088cc;
+}
+
+.uploadTool .cut {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  border-top: 1px solid transparent;
+}
+
+#myBooking .placeholder, .placeholder2 {
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  font-size: 16px;
+  color: #ccc;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  
+}
+
+#myBooking .placeholder2, .placeholder {
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  font-size: 16px;
+  color: #ccc;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+#myBooking .submit {
+  background-color: #0088cc;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#myBooking .submit:hover {
+  background-color: #005580;
+}
+
+
+#tools-list li{
+  margin: 0 auto;
+  
+  text-align: center;
+  
+  
+  list-style: none;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+#booking-success {
+  color: lightgray;
+}
+
+#tool-table {
+  margin-left: 38%;
+}
+
+.tool-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    max-width: 70%;
+}
+
+.tool-table thead tr {
+    background-color: #272834;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tool-table th,
+.tool-table td {
+    padding: 12px 15px;
+}
+
+.tool-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tool-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.tool-table tbody tr:last-of-type {
+    border-bottom: 2px solid #272834;
+}
+
+td > button{
+  padding: 5px;
+}
+
+.nav-component > a{
+   color: white;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+.td-name {
+  font-size: 22pt;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav-component></nav-component>
+
+
+    <ul id="selected-tools-list">
+    </ul>
+
+    <h3>Your Booking Cart:</h3>
+      <table class="tool-table">
+        <thead>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Button</th>
+        </thead>
+        <tbody id="tools-list">
+        </tbody>
+      </table>
+      
+    
+
+     <form id="myBooking" name="myBooking" method="post" action="/booking/uploadBooking" onsubmit="submitBookingForm(event)" class="uploadTool">
+        <div class="subtitle">Fill out the form below to book your tool(s)</div>
+<br>
+        
+
+        <div class="input-container ic3">
+          
+          <input name="email" required class="input" type="text" placeholder="Your email adress: " id="booking-email"> 
+          <div class="cut"></div>
+          
+        </div> 
+
+      <div class="input-container ic1">
+        <input type="date" name="startBookingDate" required class="input" placeholder=" " id="bookingStart">
+        <div class="cut"></div>
+        <label for="firstname" class="placeholder2">Start Date:</label>
+      </div>
+
+      <div class="input-container ic2">
+        <input name="endBookingDate" required class="input" type="date" placeholder=" " id="bookingEnd"> 
+        <div class="cut"></div>
+        <label class="placeholder2">End Date:</label>
+      </div>
+
+      <button type="text" class="submit" value="submit" required>Submit</button>
+      
+      <div id="booking-success"></div>
+      
+    </form>
+    
+<div id="booking-container"></div>
+
+    <footer-component></footer-component>
+
+    <script>
+
+
+
+
+
+
+// Get the URL search parameters
+const urlParams = new URLSearchParams(window.location.search);
+
+// Get the tools data from the URL
+const toolsData = urlParams.get('tools');
+
+// Convert the tools data from a string to an array of objects
+const tools = JSON.parse(toolsData);
+
+// Get the HTML element where you want to display the tools
+const toolsList = document.getElementById('tools-list');
+
+
+
+// Display the tools on the screen
+if (tools && tools.length > 0) {
+  tools.forEach(tool => {
+    addTool(tool);
+  });
+}
+
+// Function to add a tool to the list
+function addTool(tool) {
+  const table = document.createElement('tr');
+  table.innerHTML = `
+    <td class="toolName">${tool.name}</td>
+    <td class="toolQty">${tool.quantity}</td>
+    <button class="delete-tool" data-id="${tool.id}">Remove</button>
+  `;
+  toolsList.appendChild(table);
+}
+
+// Add an event listener to the tools list to listen for clicks on the delete buttons
+toolsList.addEventListener('click', event => {
+  if (event.target.classList.contains('delete-tool')) {
+    const id = parseInt(event.target.dataset.id);
+  
+    removeTool(id);
+    event.target.parentElement.remove();
+  }
+});
+
+// Function to remove a tool from the data
+function removeTool(id) {
+  const index = tools.findIndex(tool => tool.id === id);
+  if (index !== -1) {
+    tools.splice(index, 1);
+  }
+}
+
+
+
+
+    
+
+
+console.log("123");
+
+
+      </script>
+        <script src="./assets/script/main.js"></script>
+</body>
+</html>

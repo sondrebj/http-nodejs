@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Form</title>
+  <script>
+    function validateForm() {
+      let e = document.forms["myForm"]["quantity"].value;
+      var x = document.forms["myForm"]["electric"].value;
+      if (isNaN(e)) {
+        alert("Quantity field must be a number");
+        return false;
+      }
+      if (x != "true" && x != "false" && x != "") {
+        alert("Electric field must be either true or false");
+        return false;
+      }      
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm" method="post" enctype="multipart/form-data" action="/upload" onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <br>
+    <label>Description</label>
+    <input type="text" name="description" required> 
+    <br>
+    <label>Quantity:</label>
+    <input type="text" name="quantity" required placeholder="Enter a number">
+    <br>
+    <label>Electric:</label>
+    <input type="text" name="electric" placeholder="Enter true or false" required> 
+    <br>
+    <label>Image:</label>
+    <input type="file" name="file" required>
+    <br>
+    <input type="submit" value="Submit" required>
+  </form>
+</body>
+</html>
+
+
+

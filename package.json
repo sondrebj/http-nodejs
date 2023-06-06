@@ -1,10 +1,34 @@
 {
-  "name": "http-nodejs",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mime": "^3.0.0",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.1"
+  },
+  "name": "web-prosjekt-2023",
+  "description": "This project is part of the NTNU, IDG2671 Webproject course. In this project we will be working on creating a website that is going to to aid an employee of NTNU when it comes to handling her workshop!",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Aiden Bai",
-  "license": "MIT",
   "scripts": {
-    "start": "node server.mjs"
-  }
+    "start": "node backend/indexBackend.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eplebok/Web-prosjekt-2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eplebok/Web-prosjekt-2023/issues"
+  },
+  "homepage": "https://github.com/Eplebok/Web-prosjekt-2023#readme"
 }

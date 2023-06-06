@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="./assets/script/main.js"></script>
+    <script src="./tools.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+    <style>
+      .uploadTool {
+        background-color: #272834;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+.uploadTool input::placeholder {
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+.uploadTool .subtitle {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: whitesmoke
+}
+
+#imgLabel {
+  position: absolute;
+  right: 66%;
+color: whitesmoke;
+font: 18px;
+}
+
+.uploadTool .input-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.uploadTool .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  color: whitesmoke;
+  background-color: transparent;
+}
+
+.uploadTool .input:focus {
+  outline: none;
+  border-bottom: 2px solid #0088cc;
+}
+
+.uploadTool .cut {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  border-top: 1px solid transparent;
+}
+
+.uploadTool .placeholder {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 16px;
+  color: #ccc;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.uploadTool .input:focus + .cut .placeholder,
+.uploadTool .input:not(:placeholder-shown) + .cut .placeholder {
+  transform: translateY(-30px);
+  font-size: 12px;
+  color: #0088cc;
+}
+
+.uploadTool .submit {
+  background-color: #0088cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.uploadTool #success,
+.uploadTool #notsuccess {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Style for the buttons container */
+.tools {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+
+#tools-electric > a {
+  text-align: center;
+  color: black;
+
+}
+
+#tools-electric {
+  margin-right: 3%;
+}
+
+#tools-normal > a {
+  text-align: center;
+  color: black;
+}
+
+#tools-normal {
+  margin-left: 3%;
+  
+}
+/* Style for the buttons */
+.tools input[type="button"] {
+  background-color: #0088cc;
+  border: none;
+  color: transparent;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 170px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20pt;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+}
+
+#electric-tools-link > input {
+  background-image: url(/assets/images/1679441031215-kenny-eliason-CuDoRFyTkAQ-unsplash.jpg);
+  background-size: cover;
+}
+
+#normal-tools-link > input {
+  background-image: url(/assets/images/hammer.jpg);
+  background-size: cover;
+}
+
+/* Hover effect for the buttons */
+.tools input[type="button"]:hover {
+  opacity: 0.6;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav-component></nav-component>
+
+    <div class="tools">
+      <div id="tools-electric">
+        <a id="electric-tools-link" href="/electricTools.html">
+          <h2>Electric Tools</h2>
+          <input type="button" value="Electric Tools">
+        </a>
+      </div>
+
+      <div id="tools-normal">
+        <div id="tools-electric">
+          <a id="normal-tools-link" href="/normalTools.html">
+            <h2>Normal Tools</h2>
+            <input type="button" value="Normal Tools">
+          </a>
+        </div>
+      </div>
+
+    </div>
+    
+
+    <footer-component></footer-component>
+
+</body>
+</html>

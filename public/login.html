@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@9.0.0/index.min.js"></script> 
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+</head>
+<body>
+    <nav-component></nav-component>
+
+  <!-- Den nye login/register formen nedenfor-->
+
+    <div class="bigcontainer">
+      <div class="container">
+
+      <div class="message signup">
+        <div class="btn-wrapper">
+          <button class="button" id="signup">Sign Up</button>
+          <button class="button" id="login"> Login</button>
+        </div>
+      </div>
+
+  <!-- Sign up form-->
+      <div class="form form--signup">
+        <div class="form--heading">Welcome! Sign Up</div>
+        <form autocomplete="off" onsubmit="submitRegisterForm(event)" method="post" action="/register">
+          <input type="email" name="email" placeholder="Email" id="email" required>
+          <input type="password" name="password" placeholder="Password" id="password" required>
+          <button class="button" id="signup">Sign Up</button>
+        </form>
+        <div id="error-message"></div>
+        <div id="status"></div>
+      </div>
+
+  <!-- Log in form -->      
+      <div class="form form--login" style="border-left: 1px solid;">  
+        <div class="form--heading">Welcome back! </div>
+        <form autocomplete="off" onsubmit="submitLoginForm(event)" method="post" action="/login">
+          <input type="email" placeholder="email" name="email" id="email2" required>
+          <input type="password" placeholder="Password" name="password" id="password2" required>
+          <button class="button" id="login">Login</button>
+          <div id="status-msg-login"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+    <footer-component></footer-component>
+    <script type="module" src="./assets/script/main.js"></script>
+    <script src="../assets/script/scripts/loginPage.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./assets/script/main.js"></script>
+    <!--<script src="./tools.js"></script>-->
+    <script src="../assets/script/spesificTool.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+    
+    <style>
+          * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+   
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .spesific-tool-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #tool-image-container {
+      width: 300px;
+      height: 300px;
+      background-color: #eee;
+
+      margin-left: 20px;
+    }
+
+    #tool-name {
+      display: relative;
+    }
+
+    #editButton {
+      width: 100px;
+      height: 100px;
+      margin-left: 10%;
+    }
+
+   
+  </style>
+    </style>
+
+</head>
+<body>
+
+    <nav-component></nav-component>
+   
+    
+    <div class="spesific-tool-container" style="margin-bottom: 100px;">
+
+        
+      <div id="tool-image-container"></div>
+
+        <div id="tool-right">
+            <div id="tool-name"></div>
+            <div id="tool-description"></div>
+            <div id="tool-quantity"></div>
+            
+        </div>
+
+    </div>
+
+    <footer-component></footer-component>
+    
+    <script src="../assets/script/edit.js"></script>
+    
+
+</body>
+</html>

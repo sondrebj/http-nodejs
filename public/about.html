@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <script src="./assets/script/main.js"></script>
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+</head>
+<style>
+    #about {
+        display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.about-section {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.about-section li {
+  margin: 10px;
+}
+
+.about-img {
+  flex: 1;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-info {
+  padding: 20px;
+}
+
+.about-info h1 {
+  margin-top: 0;
+}
+
+.about-info p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  line-height: 1.2;
+}
+
+#lastSect {
+    margin-bottom: 100px;
+}
+
+.about-link-ida {
+    color: navy;
+}
+
+
+</style>
+<body>
+    <nav-component></nav-component>
+
+    <div id="about">
+        <div class="about-section">
+          <div class="about-img">
+            <img src="/pictures/Workshop_0919-HS-40Something_Ask-studio_TommyCorner-1.0.0.jpg">
+          </div>
+          <div class="about-info">
+            <h1>About the workshop</h1>
+            <p>The workshop is an important part of the NTNU Gjøvik community, providing a space for students to come together and collaborate on projects. 
+              It's a place where ideas can come to life and where students can develop the skills they need to succeed in their academic and professional lives.
+            </p>
+            <p>The workshop is a space where students can come to work on various projects, both academic and personal. 
+              It provides access to a wide range of tools, including electric tools such as 3D printers and laser cutters, as well as more traditional tools like saws and hammers. 
+              Whether you need to build a prototype for a class project or just want to explore your creativity, the workshop has something to offer.
+            </p>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-img">
+            <img src="/pictures/close-up-of-tools-hanging-on-wall-royalty-free-image-760251967-1563391812.jpg">
+          </div>
+          <div class="about-info">
+            <h1>What tools do we offer?</h1>
+            <p>At our workshop, we offer a wide range of tools to meet the needs of all users. 
+              Whether you're looking for cutting-edge electric tools like our 3D printer and laser cutter, or more traditional tools like a saw, we've got you covered. 
+              Our collection of tools is designed to provide students with everything they need to bring their ideas to life, from simple DIY projects to complex builds.
+            </p>
+          <p>We're proud to offer a comprehensive collection of 50 tools for our students to use. 
+            However, it's important to note that some of these tools require users to have a certificate to operate them safely. 
+            We prioritize safety at our workshop, so we ask that all students familiarize themselves with our safety protocols and obtain the necessary certificates before using these tools.
+          </p>
+          </div>
+        </div>
+        <div class="about-section" id="lastSect">
+          <div class="about-img" >
+            <img src="/assets/images/about_us_rules.jpg">
+          </div>
+          <div class="about-info">
+            <h1>Rules for using the Makerspace!</h1>
+            <ul>
+              <li>Users of the Makerspace are responsible for their own health and safety.</li>
+              <li>Equipment should be handled carefully.</li>
+              <li>Clean up after yourself and put the equipment back in its place.</li>
+              <li>If any equipment is broken, missing, or damaged, users should inform Ida Parelius.</li>
+              <li>Do not use equipment that requires a course without taking the course.</li>
+              <li>Do not take equipment out of the Makerspace.</li>
+              <li>Ask for help if you are unsure or have any questions.</li>
+              <li>No food or drinks on the electronics tables or in the printing room.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    
+
+    <footer-component></footer-component>
+
+
+</body>
+</html>

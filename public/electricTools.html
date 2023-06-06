@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../assets/script/main.js"></script>
+    <script src="../assets/script/electricTools.js"></script>
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+
+   <!-- <script src="/script/main.js"></script>-->
+   <style>
+    /* Apply a background color to the body */
+body {
+  background-color: white;
+}
+
+/* Center the tool-card-container */
+#tool-card-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  
+}
+
+
+
+/* Style the tool cards */
+.tool-card {
+  width: 30%;
+  background-color: #333;
+  color: whitesmoke;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 300px;
+}
+
+/* Style the tool card image */
+.tool-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  padding: 1px;
+  background-color: whitesmoke;
+}
+
+/* Style the tool card title */
+.tool-card h3 {
+  font-size: 1.5rem;
+  margin: 10px;
+  color: whitesmoke;
+}
+
+#tool-card-h2 {
+  color: whitesmoke;
+  
+}
+
+/* Style the tool card description */
+.tool-card p {
+  font-size: 1rem;
+  margin: 10px;
+}
+
+/* Style the tool card quantity */
+.tool-card span {
+  font-size: 0.8rem;
+  margin: 10px;
+  color: gray;
+}
+
+/* Style the tool card electric label */
+.tool-card .electric-label {
+  font-size: 0.8rem;
+  margin: 10px;
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Style the tool card normal label */
+.tool-card .normal-label {
+  font-size: 0.8rem;
+  margin: 10px;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Style the tool card button */
+.tool-card button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style the tool card button on hover */
+.tool-card button:hover {
+  background-color: #3e8e41;
+}
+
+.search {
+  margin-top: 5%;
+  text-align: center;
+}
+
+#search-bar {
+ 
+ text-align: center;
+ width: 10%;
+ padding: 10px;
+}
+.tool-card.broken {
+  opacity: 0.5; /* make the card appear greyed out */
+  pointer-events: none; /* disable mouse events on the card */
+}
+
+.bookbutton {
+ 
+  text-align: center;
+  
+}
+
+.checkout-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+   </style>
+</head>
+<body>
+
+    <nav-component></nav-component>
+    
+
+    <div class="search">
+      <button class="checkout-button" id="checkout-button">Book Tool(s): <span id="cart-count"></span> <i class="fa fa-tag" id="cart-icon"></i></button>
+      <input type="text" id="search-bar" placeholder="Search tools...">
+    </div>
+
+    <div id="tool-card-container"></div>
+    
+   
+
+
+    <footer-component></footer-component>
+
+<style>
+       #checkout-button.has-items {
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+
+.cart-active {
+  color: white;
+}
+
+.checkout-active {
+  background-color: green;
+  color: white;
+}
+</style>
+
+</body>
+</html>

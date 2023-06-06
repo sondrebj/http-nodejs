@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="../assets/script/main.js"></script>
+    <script src="../assets/script/admin.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="../assets/script/scripts/adminPage.js"></script>
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+    <style>
+        .uploadTool {
+          background-color: #272834;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1%;
+  }
+  
+  .uploadTool .subtitle {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: whitesmoke
+  }
+  
+  .uploadTool .input-container {
+    position: relative;
+    margin-bottom: 30px;
+    color: white;
+  }
+  
+  .uploadTool .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: whitesmoke;
+    background-color: transparent;
+  }
+  
+  .uploadTool .input:focus {
+    outline: none;
+    border-bottom: 2px solid #0088cc;
+  }
+  
+  .uploadTool .cut {
+    position: absolute;
+    top: 18px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    border-top: 1px solid transparent;
+  }
+
+.uploadTool input::placeholder {
+  color: whitesmoke;
+  font-size: 18px;
+}
+  
+  .uploadTool .placeholder {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-size: 16px;
+    color: #ccc;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .uploadTool .input:focus + .cut .placeholder,
+  .uploadTool .input:not(:placeholder-shown) + .cut .placeholder {
+    transform: translateY(-30px);
+    font-size: 12px;
+    color: #0088cc;
+  }
+  
+  .uploadTool .submit {
+    background-color: #0088cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    left: 35%;
+
+  }
+  
+  .uploadTool #success,
+  .uploadTool #notsuccess {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Style for the buttons container */
+  .tools {
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+  }
+  
+  /* Style for the buttons */
+  .tools input[type="button"] {
+    background-color: #0088cc;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+  }
+  
+  /* Hover effect for the buttons */
+  .tools input[type="button"]:hover {
+    background-color: navy;
+  }
+
+  .tool-link {
+    color: black;
+  }
+
+  .admin-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    max-width: 70%;
+}
+
+.admin-table thead tr {
+    background-color: #272834;
+    color: #ffffff;
+    text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+}
+
+.admin-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.admin-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.admin-table tbody tr:last-of-type {
+    border-bottom: 2px solid #272834;
+}
+
+td > button{
+  padding: 5px;
+}
+
+.nav-component > a{
+   color: white;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+.td-name {
+  font-size: 22pt;
+}
+
+.admin-info {
+  margin-top: 20px;
+}
+
+.uploadTool {
+        display: none;
+        
+      }
+.uploadTool.visible {
+        display: block;
+}
+
+#bookingAdminTable {
+        display: none;
+        margin-bottom: 100px;
+      }
+#bookingAdminTable.visible {
+        display: block;
+}
+
+#userAdminTable {
+        display: none;
+        margin-bottom: 100px;
+      }
+#userAdminTable.visible {
+        display: block;
+}
+
+#toolAdminTable {
+        display: none;
+        margin-bottom: 100px;
+      }
+#toolAdminTable.visible {
+        display: block;
+}
+
+.toggleBtns {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  margin-top: 0px ;
+  margin-bottom: 100px;
+  background-color: #0088cc;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggleBtns:hover{
+  background-color: #333;
+  color: white;
+}
+
+.toggles {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+
+  /*.table-td {
+    width: 50%;
+    height: 10%;
+  }*/
+  
+  h1{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: #333;
+
+ 
+  }
+
+  textarea {
+	width: 100%;
+  height: 100px;
+}
+
+
+  
+ 
+  
+  
+      </style>    
+</head>
+
+    
+
+<body>
+    <nav-component></nav-component>
+
+    <h1>Admin Configurations</h1>
+    <div class="toggles">
+      <button id="toggleBtn4" class="toggleBtns">Listed Tools</button>
+      <button id="toggleBtn" class="toggleBtns">Tool Upload</button>
+      <button id="toggleBtn3" class="toggleBtns">Users</button>
+      <button id="toggleBtn2" class="toggleBtns">bookings</button>
+      
+
+    </div>
+
+<!-- show all the tools inside the table -->
+
+    <div class="tools-table" id="toolAdminTable">
+        <h2 class="admin-info">List of tools</h2>
+        <table class="admin-table">
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Electric</th>
+            <th>State</th>
+            <th>Actions</th>
+            <th>Remove</th>
+            <th>Functionality</th>
+            </tr>
+        </thead>
+        <tbody class="tool-list">
+
+        </tbody>
+            
+      </table>
+    </div>
+
+<!-- show all user inside the table -->
+
+    <div class="tools-table" id="userAdminTable">
+      <h2 class="admin-info">List of users!</h2>
+      <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Make user a maker</th>
+          <th>Make user a admin</th>
+          <th>Delete account</th>
+        </tr>
+      </thead>
+      <tbody class="tool-list" id="admin-user-list">
+    
+      </tbody>
+    </table>
+    </div>
+
+
+    
+<!-- show the recent bookings inside the table -->
+    <div class="tools-table" id="bookingAdminTable">
+      <h2 class="admin-info">Recent bookings!</h2>
+       
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Booking email</th>
+            <th>Tools borrowed</th>
+            <th>From time:</th>
+            <th>To time:</th>
+            <th>Delete booking</th>
+          </tr>
+        </thead>
+        <tbody class="tool-list" id="admin-booking-list">
+  
+        </tbody>
+        
+      </table>
+    </div>
+
+    
+<div class="admin-test">
+    <!-- nye updatetools formen  -->
+    <form name="myForm" method="post" enctype="multipart/form-data" action="/tools/upload" onsubmit="event.preventDefault(); validateForm(); addTool(event);" class="uploadTool">
+      <div class="subtitle">Fill out the form below to add a tool!</div>
+
+    <div class="input-container ic1">
+      <input type="text" name="name" required class="input" placeholder="Name: " id="feedback-name">
+      <div class="cut"></div>
+      
+    </div>
+
+    <div class="input-container ic2">
+      <input name="description" required class="input" type="text" placeholder="Description: " id="feedback-description"> 
+      <div class="cut"></div>
+      
+    </div>
+
+    <div class="input-container ic2">
+      <input name="quantity" required class="input" type="text" placeholder="Quantity: " id="feedback-quantity">
+      <div class="cut"></div>
+     
+    </div>
+
+    <div class="input-container ic2">
+      <input type="text" name="electric" required class="input" type="text" placeholder="Electric: " id="feedback-electric">  
+      <div class="cut"></div>
+      
+    </div>
+
+    <div class="input-container ic2">
+      <label id="imgLabel">Image:</label>
+      <br>
+      <input type="file" name="file" required class="input" type="text" placeholder=" " id="feedback-image">
+      <div class="cut"></div>
+     
+    </div>
+    <button type="text" class="submit" value="submit" required>Submit</button>
+    <div id="success"></div>
+    <div id="notsuccess"></div>
+  </form>
+</div>
+
+    <footer-component></footer-component>
+
+    <script>
+      const toggleBtn = document.getElementById('toggleBtn');
+      const uploadTool = document.querySelector('.uploadTool');
+
+      toggleBtn.addEventListener('click', () => {
+        uploadTool.classList.toggle('visible');
+        if (ShowTools.classList.contains('visible')) {
+          ShowTools.classList.toggle('visible');
+      }
+      if (ShowBooking.classList.contains('visible')) {
+          ShowBooking.classList.toggle('visible');
+      }
+
+      if (ShowUsers.classList.contains('visible')) {
+          ShowUsers.classList.toggle('visible');
+      }
+      });
+
+      const toggleBtn2 = document.getElementById('toggleBtn2');
+      const ShowBooking = document.getElementById('bookingAdminTable');
+
+      toggleBtn2.addEventListener('click', () => {
+        ShowBooking.classList.toggle('visible');
+        if (ShowTools.classList.contains('visible')) {
+          ShowTools.classList.toggle('visible');
+      }
+      if (ShowUsers.classList.contains('visible')) {
+          ShowUsers.classList.toggle('visible');
+      }
+
+      if (uploadTool.classList.contains('visible')) {
+          uploadTool.classList.toggle('visible');
+      }
+      });
+
+      const toggleBtn3 = document.getElementById('toggleBtn3');
+      const ShowUsers = document.getElementById('userAdminTable');
+
+      toggleBtn3.addEventListener('click', () => {
+        ShowUsers.classList.toggle('visible');
+
+        if (ShowTools.classList.contains('visible')) {
+          ShowTools.classList.toggle('visible');
+      }
+      if (ShowBooking.classList.contains('visible')) {
+          ShowBooking.classList.toggle('visible');
+      }
+
+      if (uploadTool.classList.contains('visible')) {
+          uploadTool.classList.toggle('visible');
+      }
+
+      });
+
+      const toggleBtn4 = document.getElementById('toggleBtn4');
+      const ShowTools = document.getElementById('toolAdminTable');
+
+      toggleBtn4.addEventListener('click', () => {
+        ShowTools.classList.toggle('visible');
+        if (ShowUsers.classList.contains('visible')) {
+          ShowUsers.classList.toggle('visible');
+      }
+      if (ShowBooking.classList.contains('visible')) {
+          ShowBooking.classList.toggle('visible');
+      }
+
+      if (uploadTool.classList.contains('visible')) {
+          uploadTool.classList.toggle('visible');
+      }
+        
+        
+      });
+    </script>
+</body>
+
+
+</html>

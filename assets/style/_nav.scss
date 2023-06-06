@@ -1,0 +1,97 @@
+$color_1: white;
+$background-color_1: rgb(255, 255, 255); // byttet ut denne til "white" å. for å vise ntnu logoen
+
+nav {
+	//position: absolute;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	background-color: $background-color_1;
+	// width: 100vw;
+	padding: 25px 0;
+	font-size: 20px;
+	top: 0;
+	border-bottom: solid rgb(124, 122, 122); // just to see where the navbar ends. feel free to change to pref color
+}
+.nav_links {
+	flex: 1;
+	text-align: center;
+	
+	ul { 
+		display: flex;	
+		margin: 0 auto;
+		li {
+			text-decoration: none;
+			display: inline-block;
+			padding: 8px 12px;
+			position: relative;
+			a {
+				color: grey; // byttet denne til grå sånn at <a> skal vises
+				text-decoration: none;
+				font-size: 0.9em;
+			}
+			&::after {
+				content: "";
+				width: 0%;
+				height: 2px;
+				background: rgb(19, 9, 9); // byttet denne fra "white" til "black" /hover effecten
+				display: block;
+				margin: auto;
+				transition: 0.5s;
+			}
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+#leftlink {
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 12px;
+	position: relative;
+	a {
+		text-decoration: none;
+		font-size: 0.9em;
+	}
+	&::after {
+		content: "";
+		width: 0%;
+		height: 2px;
+		background: white;
+		display: block;
+		margin: auto;
+		transition: 0.5s;
+	}
+	&:hover {
+		&::after {
+			width: 100%;
+		}
+	}
+}
+
+#logo {
+margin-left: 5vw;
+}
+
+#mylinks {
+	position: absolute;
+	right: 0;
+	margin-right: 5vw;
+	
+}
+
+
+.nav_links ul img {
+	vertical-align: middle;
+  }
+
+#logout-link {
+	display: none;
+}
+
+#logout-link {
+    cursor: pointer;
+}

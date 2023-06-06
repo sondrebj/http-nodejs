@@ -1,0 +1,94 @@
+footer {
+    line-height: .7;
+    background-color: #272834;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    color: white;
+}
+
+.footer-top ul {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0; 
+    display: inline-block;
+    vertical-align: middle;
+    height: 120px;
+  
+}
+
+.footer-top li {
+    list-style: none;
+}
+
+.footer-top .fa {
+    font-size:20px;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+.footer-list {
+    font-size: .6rem;
+}
+
+.footer-container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    justify-content: center;
+}
+
+.footer-top {
+    font-size: 1.5rem;
+    margin: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.footer-top-info {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.footer-img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+// google maps css below
+
+    #map {
+        position: relative; /* or position: static; */
+        width: 20%;
+        height: 50px;
+        //margin-top: 15px;
+    }
+    
+    .footer-container {
+        position: relative;
+       
+    }
+    
+    #map {
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webproject 2023</title>
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./assets/script/main.js"></script>
+    <script src="../assets/script/scripts/footerComponent.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyBneSzE9cI6A5z_vPTkdhgsl8C8I_Scy20"></script>
+    <script src="../assets/script/scripts/navComponent.js"></script>
+    <style>
+      /* Apply box-sizing border-box to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Style form container */
+.myForm {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Style form header */
+.myForm h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: #333;
+}
+
+/* Style form labels */
+.myForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style form inputs */
+.myForm input[type="text"],
+.myForm input[type="email"],
+.myForm input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Style form submit button */
+.myForm button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+/* Style form link */
+.myForm .form-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Style error message */
+.myForm .error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav-component></nav-component>
+
+    <div class="comment-box">
+      <h2 tabindex="0">Give us some feedback regarding the page by filling out the form below.</h2>
+
+      <form action="mailto:mathiaskk@live.no" method="post" name="myForm" onsubmit="return checkForblank()" class="comment-form" id="myForm" tabindex="0" aria-label="This forms contains one required input field, along with your desired message.">
+        <p id="error4" tabindex="0" class="error4"></p>
+    
+        <label for="name">Your name: (required)</label>
+        <input tabindex="0" type="text" id="name" name="name">
+        <p id="error2" tabindex="0" class="error2"></p>
+    
+        <label for="textarea">Your message: (required)</label>
+        <textarea tabindex="0" id="textarea" name="textarea" rows="5"></textarea>
+        <p id="error3" tabindex="0" class="error3"></p>
+        
+        <button type="submit" id="submitbutton" class="hero-btn alt-btn">Submit Comment</button>
+
+      </form>
+    </div>
+
+     
+    
+    <footer-component></footer-component>
+
+
+</body>
+</html>

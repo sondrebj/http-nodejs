@@ -1,24 +1,3 @@
----
-title: Node HTTP Module
-description: A HTTP module server
-tags:
-  - http
-  - nodejs
-  - javascript
----
+# Web-prosjekt-2023
+This project is part of the NTNU, IDG2671 Webproject course. In this project we will be working on creating a website that is going to to aid an employee of NTNU when it comes to handling her workshop!
 
-# HTTP Module Example
-
-This example starts an [HTTP Module](https://nodejs.org/api/http.html) server.
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/ZweBXA)
-
-## 💁‍♀️ How to use
-
-- Install dependencies `yarn`
-- Connect to your Railway project `railway link`
-- Start the development server `railway run yarn start`
-
-## 📝 Notes
-
-The server started simply returns a `Hello World` payload. The server code is located in `server.mjs`.
