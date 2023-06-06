@@ -8,20 +8,36 @@ const {createTool, getNormalTools, getTools, getOneNormalTool, getOneElectricToo
 
 const {createUser} = require("../controllers/userController")
 
-const upload = multer({
-    dest: "/DBpictures",
-    fileFilter: (req, file, cb) => {
-      if (
-        file.mimetype === "image/png" ||
-        file.mimetype === "image/jpeg" ||
-        file.mimetype === "image/jpg"
-      ) {
-        cb(null, true);
-      } else {
-        cb(new Error("Only .png, .jpeg and .jpg files are allowed!"), false);
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadDir = 'DBpictures';
+    fs.mkdir(uploadDir, { recursive: true }, (err) => {
+      if (err) {
+        console.error(err);
       }
-    },
-  });
+      cb(null, uploadDir);
+    });
+  },
+  filename: (req, file, cb) => {
+    const fileName = Date.now() + '-' + file.originalname;
+    cb(null, fileName);
+  },
+});
+
+const upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (
+      file.mimetype === 'image/png' ||
+      file.mimetype === 'image/jpeg' ||
+      file.mimetype === 'image/jpg'
+    ) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only .png, .jpeg, and .jpg files are allowed!'), false);
+    }
+  },
+});
 
 
 router.get("/tools", cors(), getTools)
