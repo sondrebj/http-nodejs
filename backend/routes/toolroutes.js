@@ -52,12 +52,10 @@ router.get("/normal/:name", cors(), getOneNormalTool)
 
 // this creates a new tool
 router.post("/create/tool", createTool)
-// router.post("/create/user", createUser)
 
 // route that updates the tool from "working" to "broken"
 router.put("/electric/:id", getOneElectricTool)
 
-//
 router.put('/working/:id', markToolAsWorking )
 
 router.put("/configure/:name", cors(), configTool)

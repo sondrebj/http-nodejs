@@ -3,7 +3,7 @@ const shoppingCart = [];
 fetch('https://webprosjekt-heisann.onrender.com/tools/electric')
   .then(response => response.json())
   .then(data => {
-    // Modify the data as needed
+    // modify the data as needed
     const modifiedData = data.map(tool => {
       return {
         id: tool._id,
@@ -15,7 +15,7 @@ fetch('https://webprosjekt-heisann.onrender.com/tools/electric')
       };
     });
     
-    // Display the modified data on the webpage
+    // display the modified data on the webpage
     const container = document.getElementById('tool-card-container');
     
     modifiedData.forEach(tool => {
@@ -76,24 +76,24 @@ fetch('https://webprosjekt-heisann.onrender.com/tools/electric')
 
         const bookButton = toolElement.querySelector('.book-tool-button');
         bookButton.addEventListener('click', () => {
-        shoppingCart.push(tool); // Add tool to shopping cart
+        shoppingCart.push(tool); // add tool to shopping cart
         localStorage.setItem('selectedTools', JSON.stringify(shoppingCart)); // Store selected tools in local storage
-        console.log("cart" + shoppingCart); // Display shopping cart for testing purposes
-        updateCheckoutButton(); // Update the checkout button
+        console.log("cart" + shoppingCart); // display shopping cart for testing purposes
+        updateCheckoutButton(); // update the checkout button
 
         const cartIcon = document.getElementById('cart-icon');
         const cartCount = document.getElementById('cart-count');
-        cartIcon.classList.add('cart-active'); // Change cart icon color
-        cartCount.textContent = shoppingCart.length; // Update cart count
-        checkoutButton.classList.add('checkout-active'); // Highlight "Checkout" button
+        cartIcon.classList.add('cart-active'); // change cart icon color
+        cartCount.textContent = shoppingCart.length; // update cart count
+        checkoutButton.classList.add('checkout-active'); // highlight "Checkout" button
         });
 
         const checkoutButton = document.getElementById('checkout-button');
         checkoutButton.addEventListener('click', () => {
-          // Get the selected tools from local storage
+          // get the selected tools from local storage
           const selectedTools = JSON.parse(localStorage.getItem('selectedTools'));
 
-          // Redirect the user to the booking form page with the selected tools in the query string
+          // redirect the user to the booking form page with the selected tools in the query string
           window.location.href = `booking.html?tools=${JSON.stringify(selectedTools)}`;
 });
 

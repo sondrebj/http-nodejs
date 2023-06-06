@@ -69,7 +69,7 @@ const signup = async (req, res) => {
       });
       await user.save();
       res.redirect("/login.html")
-      //res.status(200).end("User created successfully!");
+      
       console.log(user); // need to add a msg that informs the user that an account has been made!
       
     }

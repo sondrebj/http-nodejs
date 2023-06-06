@@ -142,18 +142,16 @@ const deleteTool = async (toolId) => {
         });
         if (response.status === 200) {
           document.getElementById("booking-success").innerHTML = `Booking appointment sent!`;
-          // Update the data of the tools in the database
+          
           const toolIds = toolID.split(", ");
           for (const id of toolIds) {
-          // Perform a database update operation for each tool
-          // For example, if you are using SQL:
-          // UPDATE tools SET status = 'booked' WHERE id = id;
+          
           }
-         // document.getElementById("booking-notsuccess").innerHTML = ""; // clear any previous error messages
+        
         } else {
           const errorMessage = await response.text();
           document.getElementById("booking-success").innerHTML = "Booking not success!";
-          //document.getElementById("booking-notsuccess").innerHTML = "Booking not success!";
+          
         }
       } catch (err) {
         console.error(err);

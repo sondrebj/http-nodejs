@@ -1,19 +1,19 @@
 // check if the user is an admin before accessing the page!
-// Check if the user is an admin before accessing the page!
+// check if the user is an admin before accessing the page!
 fetch('https://webprosjekt-heisann.onrender.com/decode')
   .then(response => response.json())
   .then(data => {
     if (data.role === "admin") {
-      // If the user is an admin, show the page
+      // if the user is an admin, show the page
       console.log("User is an admin!");
     } else {
-      // If the user is not an admin, redirect to index.html
+      // if the user is not an admin, redirect to index.html
       console.log("User is not an admin!");
       window.location.href = "index.html";
     }
   })
   .catch(error => {
-    // If there's an error fetching the user data, redirect to index.html
+    // if there's an error fetching the user data, redirect to index.html
     console.log(error.message);
     window.location.href = "index.html";
   });
@@ -22,7 +22,7 @@ fetch('https://webprosjekt-heisann.onrender.com/decode')
 fetch('https://webprosjekt-heisann.onrender.com/tools/tools')
   .then(response => response.json())
   .then(data => {
-    // Modify the data as needed
+    // modify the data as needed
     const modifiedData = data.map(tool => {
       return {
         id: tool._id,
@@ -35,7 +35,7 @@ fetch('https://webprosjekt-heisann.onrender.com/tools/tools')
     });
   
     
-    // Display the modified data on the webpage
+    // display the modified data on the webpage
     const container = document.querySelector('.tool-list');
    
     

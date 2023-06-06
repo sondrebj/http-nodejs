@@ -25,7 +25,6 @@ const getTools = async (req, res) => {
     try {
       const normalTools = await NormalTool.find();
       res.json(normalTools)
-      //res.render('normalTools', { tools: normalTools });
     } catch (err) {
       console.error(err);
       res.status(500).send('Error retrieving normal tools');

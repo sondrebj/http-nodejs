@@ -74,7 +74,7 @@ async function submitLoginForm(event) {
           loggedIn: true,
           email: email,
         }, "*");
-     //   window.alert("You logged in!")
+        
         document.getElementById("status-msg-login").innerHTML = `You logged in!`;
         window.location.href = "index.html"; // redirects the user to the home page
       } else {

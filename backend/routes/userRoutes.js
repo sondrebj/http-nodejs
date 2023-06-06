@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-//const {check} = require('express-validator')
 const {getAllUsers, getOneUser,signup, login, decodeCookie, logout, deleteUser} = require('../controllers/userController')
-//const { auth } = require('../controllers/verifyToken') // add this later on
+
 
 // used to get all the user in the admin page
 router.get('/all', getAllUsers)
