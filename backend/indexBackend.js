@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // we set our server to listen to PORT
-app.listen(PORT,() => {
+app.listen(PORT, '0.0.0.0',() => {
     console.log(`Api fungere på ${PORT}`)
     console.log(process.env.MONGO_URI);
 })
