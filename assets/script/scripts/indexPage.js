@@ -1,7 +1,7 @@
 // for index.html page to display all the tools avaliable and to display the broken/functional tools
 window.addEventListener('load', async () => {
     try {
-      const response = await fetch('http://localhost:3200/tools/tools');
+      const response = await fetch('https://webprosjekt-heisann.onrender.com/tools/tools');
       const tools = await response.json();
   
       const totalTools = tools.length;
@@ -23,7 +23,7 @@ window.addEventListener('load', async () => {
 // for index page
 // checks all the tools for any broken tool and then displays the name of the tool that is flagged as broken
 window.addEventListener('load', async () => {
-    const response = await fetch('http://localhost:3200/tools/tools', {
+    const response = await fetch('https://webprosjekt-heisann.onrender.com/tools/tools', {
       method: "GET"
     });
       const tools = await response.json();

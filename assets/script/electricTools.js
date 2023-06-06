@@ -1,7 +1,7 @@
 const electricToolsContainer = document.getElementById('electric-tools-container');
 const shoppingCart = [];
 
-fetch('http://localhost:3200/tools/electric')
+fetch('https://webprosjekt-heisann.onrender.com/tools/electric')
   .then(response => response.json())
   .then(data => {
     // Modify the data as needed
@@ -111,7 +111,7 @@ fetch('http://localhost:3200/tools/electric')
         const brokenButton = toolElement.querySelector('.broken-tool-button');
         brokenButton.addEventListener('click', async () => {
         tool.functional = 'broken'; // update tool's state
-        const response = await fetch(`http://localhost:3200/tools/electric/${tool.id}`, {
+        const response = await fetch(`https://webprosjekt-heisann.onrender.com/tools/electric/${tool.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'

@@ -37,7 +37,7 @@ editButton.addEventListener("click", () => {
     const newToolQuantity = quantityInput.value;
 
     // send a PUT request to update the tool info in the database
-    fetch(`http://localhost:3200/tools/configure/${currentName}`, {
+    fetch(`https://webprosjekt-heisann.onrender.com/tools/configure/${currentName}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

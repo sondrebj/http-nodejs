@@ -30,7 +30,7 @@ class NavComponent extends HTMLElement {
       const logoutLink = document.getElementById("logout-link");
         if (logoutLink) {
           logoutLink.addEventListener("click", async () => {
-            const response = await fetch('http://localhost:3200/logout', {
+            const response = await fetch('https://webprosjekt-heisann.onrender.com/logout', {
               method: 'GET',
               credentials: 'include',
             });
@@ -69,7 +69,7 @@ function updateNavBar(email) {
   
   // add event listener to update nav bar when the page loads
   window.addEventListener("load", async () => {
-    const response = await fetch('http://localhost:3200/decode', {
+    const response = await fetch('https://webprosjekt-heisann.onrender.com/decode', {
       method: 'GET',
       credentials: 'include',
     });

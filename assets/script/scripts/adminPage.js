@@ -2,7 +2,7 @@
 // and to make them display inside the table
 window.addEventListener('load', async () => {
   try {
-    const response = await fetch('http://localhost:3200/all', {
+    const response = await fetch('https://webprosjekt-heisann.onrender.com/all', {
       method: "GET"
     });
     const allUsers = await response.json();
@@ -18,7 +18,7 @@ window.addEventListener('load', async () => {
       makerButton.innerHTML = "Make this user a maker"
       makerButton.addEventListener('click', async() => {
         try {
-          const updateUser = await fetch(`http://localhost:3200/all/${user._id}`, {
+          const updateUser = await fetch(`https://webprosjekt-heisann.onrender.com/all/${user._id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ window.addEventListener('load', async () => {
       adminButton.innerHTML = 'Make this user an admin';
       adminButton.addEventListener('click', async () => {
         try {
-          const updateUser = await fetch(`http://localhost:3200/all/${user._id}`, {
+          const updateUser = await fetch(`https://webprosjekt-heisann.onrender.com/all/${user._id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ window.addEventListener('load', async () => {
         const confirmMessage = window.confirm("Are you sure you want to delete this user?");
         if (confirmMessage) {
           try {
-            const response = await fetch(`http://localhost:3200/delete/${user._id}`, {
+            const response = await fetch(`https://webprosjekt-heisann.onrender.com/delete/${user._id}`, {
               method: 'DELETE'
             });
             if (response.ok) {
@@ -87,7 +87,7 @@ window.addEventListener('load', async () => {
 // and to make them display inside the table
 window.addEventListener('load', async () => {
   try {
-    const response = await fetch('http://localhost:3200/booking/getBooking', {
+    const response = await fetch('https://webprosjekt-heisann.onrender.com/booking/getBooking', {
       method: 'GET'
     });
     const allBookings = await response.json();
@@ -121,7 +121,7 @@ window.addEventListener('load', async () => {
         try {
           const confirmMessage = window.confirm("Are you sure you want to delete this?");
           if(confirmMessage) {
-            const response = await fetch(`http://localhost:3200/booking/delete/${booking._id}`, {
+            const response = await fetch(`https://webprosjekt-heisann.onrender.com/booking/delete/${booking._id}`, {
               method: 'DELETE'
             });
             const result = await response.json();

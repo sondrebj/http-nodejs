@@ -6,7 +6,7 @@
 const toolName = window.location.search.split('=')[1];
 
 function fetchToolData(toolType, toolName) {
-fetch(`http://localhost:3200/tools/${toolType}/${toolName}`)
+fetch(`https://webprosjekt-heisann.onrender.com/tools/${toolType}/${toolName}`)
   .then(response => response.json())
   .then(tool => {
     if (tool) {//window.location.href = `/spesificTool.html?name=${tool.name}&description=${tool.description}&power=${tool.power}`;

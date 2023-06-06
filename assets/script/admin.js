@@ -1,6 +1,6 @@
 // check if the user is an admin before accessing the page!
 // Check if the user is an admin before accessing the page!
-fetch('http://localhost:3200/decode')
+fetch('https://webprosjekt-heisann.onrender.com/decode')
   .then(response => response.json())
   .then(data => {
     if (data.role === "admin") {
@@ -19,7 +19,7 @@ fetch('http://localhost:3200/decode')
   });
 
 
-fetch('http://localhost:3200/tools/tools')
+fetch('https://webprosjekt-heisann.onrender.com/tools/tools')
   .then(response => response.json())
   .then(data => {
     // Modify the data as needed
@@ -88,7 +88,7 @@ fetch('http://localhost:3200/tools/tools')
         const markButton = toolElement.querySelector('.admin-markTool-button');
         markButton.addEventListener('click', async () => {
           tool.functional = 'working'; // change the content from "broken" to "working"
-          const response = await fetch(`http://localhost:3200/tools/working/${tool.id}`, {
+          const response = await fetch(`https://webprosjekt-heisann.onrender.com/tools/working/${tool.id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
@@ -145,7 +145,7 @@ editButton.addEventListener("click", () => {
     const newToolQuantity = quantityInput.value;
 
     // send a PUT request to update the tool info in the database
-    fetch(`http://localhost:3200/tools/configure/${currentName}`, {
+    fetch(`https://webprosjekt-heisann.onrender.com/tools/configure/${currentName}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

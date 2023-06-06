@@ -63,7 +63,7 @@ function hideMenu(){
 
 const deleteTool = async (toolId) => {
   try {
-    const response = await fetch(`http://localhost:3200/tools/delete/${toolId}`, {
+    const response = await fetch(`https://webprosjekt-heisann.onrender.com/tools/delete/${toolId}`, {
       method: 'DELETE',
     });
 
