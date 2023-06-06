@@ -209,7 +209,7 @@ h1,h2{
 
      <form id="myBooking" name="myBooking" method="post" action="/booking/uploadBooking" onsubmit="submitBookingForm(event)" class="uploadTool">
         <div class="subtitle">Fill out the form below to book your tool(s)</div>
-<br>
+    <br>
         
 
         <div class="input-container ic3">
@@ -276,6 +276,7 @@ function addTool(tool) {
     <td class="toolName">${tool.name}</td>
     <td class="toolQty">${tool.quantity}</td>
     <button class="delete-tool" data-id="${tool.id}">Remove</button>
+    <td class="toolID" id="${tool.id}"></td>
   `;
   toolsList.appendChild(table);
 }
