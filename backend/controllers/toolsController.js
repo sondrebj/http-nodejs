@@ -130,16 +130,31 @@ const deleteTool = async (req, res) => {
 
 // uploading a tool + multer setup on toolsroutes.js
 
-const uploadDir = path.join("assets", "images");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
-}
+
 
 const uploadTool = async (req, res) => {
   const tempPath = req.file.path;
   const date = Date.now();
   const targetFileName = `${date}-${req.file.originalname}`;
   const targetPath = path.join(uploadDir, targetFileName).replace(/\\/g, "/");
+
+  const uploadDir = path.join("assets", "images");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
+const directoryPath = '/DBpictures';
+
+try {
+  if (!fs.existsSync(directoryPath)) {
+    fs.mkdirSync(directoryPath);
+    console.log(`Directory '${directoryPath}' created successfully.`);
+  } else {
+    console.log(`Directory '${directoryPath}' already exists.`);
+  }
+} catch (error) {
+  console.error(`Error creating directory '${directoryPath}': ${error}`);
+}
 
   try {
     await fs.promises.rename(tempPath, targetPath);
